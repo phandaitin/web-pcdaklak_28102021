@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">    
+
+<% if(loggedUserId) { %>
+    <%- include('../elements/head')%>
+    <body class="sb-nav-fixed">
+ 
+        <%- include('../elements/topNav')%>
+        <div id="layoutSidenav">
+            
+                <%- include('../elements/leftNav')%>
+            
+            <div id="layoutSidenav_content">
+                
+                <%- body %>
+            
+                
+                <%- include('../elements/footer')%>
+            </div>
+        </div>
+        
+        <%- include('../elements/script')%>
+        
+    </body>
+<% }  %>   
+
+</html>
+

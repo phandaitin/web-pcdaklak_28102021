@@ -1,0 +1,43 @@
+ 
+ <% 
+  const collection = 'khangtpham';    
+  const linkIndex  = systemConfig.prefixAdmin + '/' + `${collection}`;
+%>
+
+    <!--  -->
+    <div class="container-fluid px-4">
+        <h1 class="mt-1">Edit Khách hàng - Thương phẩm </h1>       
+     <!--  -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>  Form Khách hàng - Thương phẩm                  
+            </div> 
+            
+            <form role="form" method ='POST' action="<%= linkIndex %>/<%= data.id %>?_method=PUT"  > 
+              <div class="card-body">              
+
+                <div class="form-group mb-3 ">
+                  <label> Điện lực </label>
+                  <input type="text" class="form-control" name="name" value="<%= data.name %>"  >      
+                </div>
+
+                <div class="form-group mb-3 ">
+                  <label> Khách hàng </label>
+                  <input type="text" class="form-control" name="khang" value="<%= data.khang %>"  >      
+                </div>
+                <div class="form-group mb-3 ">
+                  <label> Thương phẩm </label>
+                  <input type="text" class="form-control" name="tpham" value="<%= data.tpham %>"  >      
+                </div>
+ 
+                <div>
+                  <a href="<%= linkIndex %>" class="btn btn-danger">Cancel</a> &nbsp
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+              </div>
+            </form>    
+        </div> 
+ 
+    </div>
+ 

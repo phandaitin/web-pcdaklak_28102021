@@ -1,0 +1,50 @@
+ 
+ <% 
+  const collection = 'user';    
+  const linkIndex  = systemConfig.prefixAdmin + '/' + `${collection}`;
+%>
+
+    <!--  -->
+    <div class="container-fluid px-4">
+        <h1 class="mt-1">Edit Users</h1>       
+     <!--  -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>  Form User
+            </div> 
+                       
+            <form role="form" method ='POST' action="<%= linkIndex %>/<%= data.id %>?_method=PUT"  > 
+              <div class="card-body">
+                <!-- msgError -->
+                <%- include('./../../elements/msgError')%>
+                <!-- msgError -->
+                <div class="form-group mb-3 ">
+                  <label> Category name</label>
+                  <input type="text" class="form-control" name="name" value="<%= data.name %>"  >      
+                </div>
+
+                <div class="form-group mb-3 ">
+                  <label> Category name</label>
+                  <input type="text" class="form-control" name="email" value="<%= data.email %>"  >      
+                </div>
+                
+                <div class="form-group mb-3 ">
+                  <label>Status</label>
+                  <select name="status" class="form-control" >         
+                    <!-- <option value="Novalue">Choose Status</option> -->
+                    <option value="active"  <%= (data.status == "active") ? 'selected="selected"' : '' %> >active</option>
+                    <option value="inactive"  <%= (data.status == "inactive") ? 'selected="selected"' : '' %> >inactive</option>                                                                          
+                  </select>                                            
+                </div>
+
+                <div>
+                  <a href="<%= linkIndex %>" class="btn btn-danger">Cancel</a> &nbsp
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+              </div>
+            </form>    
+        </div> 
+ 
+    </div>
+ 

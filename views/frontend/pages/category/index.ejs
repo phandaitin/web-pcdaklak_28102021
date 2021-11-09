@@ -1,0 +1,534 @@
+<% 
+const folderUploads   ='backend/upload/images/'
+%>
+
+
+ 
+<section class="news-single section">
+	<div class="container">		
+		<div class="row">
+
+			<div class="col-lg-8 col-12" >	
+
+				<!------TIN NỔI BẬT RANDOM------->
+				<div class="chuyenmuc-tin" style="margin-left:-7px; margin-right: -7px"  >
+					<H6 style="color: #d40d13; font-weight:bold; font-family: 'Arial' ; ">
+						<i class="fa fa-newspaper-o" aria-hidden="true"></i>	 &nbsp;					 
+						TIN NỔI BẬT
+					<H6>
+				</div>					 				 
+				<div class="row">  
+					<% for( let i = 0; i<  dataRandomPost.length ; i ++ )  {%>
+						<div class="col-lg-4 col-md-6 col-sm-12">	
+							<div class="single-post">				
+
+								<div class="image-tin-350200">
+									<a href="/bai-viet/<%= dataRandomPost[i]._id %> " >
+										<img src="<%= folderUploads + dataRandomPost[i].thumb %>"  style="width:100% ; height:160px ;margin-top: 10px" >											
+									</a>			
+								</div>
+
+								<div class="content">
+									<h6 style="color: #2905A1; font-family: 'Arial' ; font-weight: bold; font-size: 16px; padding: 10px 10px 10px 10px" >
+										<a href="/bai-viet/<%= dataRandomPost[i]._id %> "> 
+											<%= dataRandomPost[i].name.replace(/(<([^>]+)>)/igm,"").substr(0,50) %></a>
+									</h6>
+									<div class="meta-tin-chuyenmuc">	
+										<span class="date" >											
+											<i class="fa fa-user" ></i> <%= dataRandomPost[0].author  %> &nbsp &nbsp 
+											<i class="fa fa-calendar"></i> <%= moment(dataRandomPost[0].updatedAt).format('DD-MM-YYYY') %>  &nbsp &nbsp 
+											<!-- <i class="fa fa-eye" ></i> <%= dataRandomPost[0].view %> views  -->
+										</span>
+									</div> 
+									<h6 style="font-family: 'Arial';font-size:15px; color: #333 ; line-height:18px; margin: 10px 10px 10px 10px" >									
+										<%= dataRandomPost[i].title.replace(/(<([^>]+)>)/igm,"").substr(0,100) %>
+									</h6>
+								</div>
+									
+							</div>
+			
+						</div>
+			
+						<%  } %>
+					
+				</div>
+				<!------TIN KINH DOANH ------->
+				<div class="chuyenmuc-tin" style="margin-left:-7px; margin-right: -7px"  >
+					<H6 style="color: #d40d13; font-weight:bold; font-family: 'Arial' ; ">
+						<i class="fa fa-newspaper-o" aria-hidden="true"></i>	 &nbsp;					 
+						TIN KINH DOANH
+					<H6>
+				</div>					 				 
+				<div class="row">  
+					<% for( let i = 0; i<  dataKinhdoanhPost.length ; i ++ )  {%>
+						<div class="col-lg-4 col-md-6 col-sm-12">	
+							<div class="single-post">			
+								<div class="image-tin-350200">
+									<a href="/bai-viet/<%= dataKinhdoanhPost[i].id %> " >
+										<img src="<%= folderUploads + dataKinhdoanhPost[i].thumb %>"  style="width:100% ; height:160px ;margin-top: 10px" >											
+									</a>
+			
+								</div>
+								<div class="content">
+									<h6 style="color: #2905A1; font-family: 'Arial' ; font-weight: bold; font-size: 16px; padding: 10px 10px 10px 10px" >
+										<a href="/bai-viet/<%= dataKinhdoanhPost[i].id %> "> 
+											<%= dataKinhdoanhPost[i].name.replace(/(<([^>]+)>)/igm,"").substr(0,100) %></a>
+									</h6>
+									<div class="meta-tin-chuyenmuc">	
+										<span class="date" >
+											<i class="fa fa-user" ></i> <%= dataKinhdoanhPost[0].author  %> &nbsp &nbsp 
+											<i class="fa fa-calendar"></i> <%= moment(dataKinhdoanhPost[0].updatedAt).format('DD-MM-YYYY') %>  &nbsp &nbsp 
+											<!-- <i class="fa fa-eye" ></i> <%= dataRandomPost[0].view %> views  -->
+										</span>
+									</div> 
+									<!-- <h6 style="font-family: 'Arial';font-size:15px; color: #333 ; line-height:18px; margin: 10px 10px 10px 10px" >									
+										<%= dataKinhdoanhPost[i].title.replace(/(<([^>]+)>)/igm,"").substr(0,100) %>
+									</h6> -->
+								</div>
+									
+							</div>
+			
+						</div>
+			
+						<%  } %>
+					
+				</div>
+				<!------TIN KỸ THUẬT ------->
+				<div class="chuyenmuc-tin" style="margin-left:-7px; margin-right: -7px"  >
+					<H6 style="color: #d40d13; font-weight:bold; font-family: 'Arial' ; ">
+						<i class="fa fa-newspaper-o" aria-hidden="true"></i>	 &nbsp;					 
+						TIN KỸ THUẬT
+					<H6>
+				</div>					 				 
+				<div class="row">  
+					<% for( let i = 0; i<  dataKythuatPost.length ; i ++ )  {%>
+						<div class="col-lg-4 col-md-6 col-sm-12">	
+							<div class="single-post">			
+								<div class="image-tin-350200">
+									<a href="/bai-viet/<%= dataKythuatPost[i].id %> " >
+										<img src="<%= folderUploads + dataKythuatPost[i].thumb %>"  style="width:100% ; height:160px ;margin-top: 10px" >											
+									</a>									
+								</div>
+								<div class="content">
+									<h6 style="color: #2905A1; font-family: 'Arial' ; font-weight: bold; font-size: 16px; padding: 10px 10px 10px 10px" >
+										<a href="/bai-viet/<%= dataKythuatPost[i].id %> "> 
+											<%= dataKythuatPost[i].name.replace(/(<([^>]+)>)/igm,"").substr(0,100) %></a>
+									</h6>
+									<div class="meta-tin-chuyenmuc">	
+										<span class="date" ><i class="fa fa-calendar"></i>   
+											<%= moment(dataKythuatPost[i].updatedAt).format("DD-MM-YYYY") %> | <%= dataKythuatPost[i].view %> views 
+										</span>
+									</div> 
+									<!-- <h6 style="font-family: 'Arial';font-size:15px; color: #333 ; line-height:18px; margin: 10px 10px 10px 10px" >									
+										<%= dataKinhdoanhPost[i].title.replace(/(<([^>]+)>)/igm,"").substr(0,100) %>
+									</h6> -->
+								</div>
+									
+							</div>
+			
+						</div>
+			
+						<%  } %>
+					
+				</div>
+
+				<!------TIN CÔNG NGHỆ - CHUYỂN ĐỔI SỐ ------->
+				<div class="chuyenmuc-tin" style="margin-left:-7px; margin-right: -7px"  >
+					<H6 style="color: #d40d13; font-weight:bold; font-family: 'Arial' ; ">
+						<i class="fa fa-newspaper-o" aria-hidden="true"></i>	 &nbsp;					 
+						TIN CÔNG NGHỆ - CHUYỂN ĐỔI SỐ
+					<H6>
+				</div>					 				 
+				<div class="row">  
+					<% for( let i = 0; i<  dataCongNgheCDS.length ; i ++ )  {%>
+						<div class="col-lg-4 col-md-6 col-sm-12">	
+							<div class="single-post">			
+								<div class="image-tin-350200">
+									<a href="/bai-viet/<%= dataCongNgheCDS[i].id %> " >
+										<img src="<%= folderUploads + dataCongNgheCDS[i].thumb %>"  style="width:100% ; height:160px ;margin-top: 10px" >											
+									</a>									
+								</div>
+								<div class="content">
+									<h6 style="color: #2905A1; font-family: 'Arial' ; font-weight: bold; font-size: 16px; padding: 10px 10px 10px 10px" >
+										<a href="/bai-viet/<%= dataCongNgheCDS[i].id %> "> 
+											<%= dataCongNgheCDS[i].name.replace(/(<([^>]+)>)/igm,"").substr(0,100) %></a>
+									</h6>
+									<div class="meta-tin-chuyenmuc">	
+										<span class="date" ><i class="fa fa-calendar"></i>   
+											<%= moment(dataCongNgheCDS[i].updatedAt).format("DD-MM-YYYY") %> | <%= dataCongNgheCDS[i].view %> views 
+										</span>
+									</div> 
+									<!-- <h6 style="font-family: 'Arial';font-size:15px; color: #333 ; line-height:18px; margin: 10px 10px 10px 10px" >									
+										<%= dataKinhdoanhPost[i].title.replace(/(<([^>]+)>)/igm,"").substr(0,100) %>
+									</h6> -->
+								</div>
+									
+							</div>
+			
+						</div>
+			
+						<%  } %>
+					
+				</div>
+				
+				<!------TIN NHÂN VẬT SỰ KIỆN ------->
+				<div class="chuyenmuc-tin" style="margin-left:-7px; margin-right: -7px"  >
+					<H6 style="color: #d40d13; font-weight:bold; font-family: 'Arial' ; ">
+						<i class="fa fa-newspaper-o" aria-hidden="true"></i>	 &nbsp;					 
+						TIN NHÂN VẬT SỰ KIỆN
+					<H6>
+				</div>					 				 
+				<div class="row">  
+					<% for( let i = 0; i<  dataNhanVatSuKien.length ; i ++ )  {%>
+						<div class="col-lg-4 col-md-6 col-sm-12">	
+							<div class="single-post">			
+								<div class="image-tin-350200">
+									<a href="/bai-viet/<%= dataNhanVatSuKien[i].id %> " >
+										<img src="<%= folderUploads + dataNhanVatSuKien[i].thumb %>"  style="width:100% ; height:160px ;margin-top: 10px" >											
+									</a>									
+								</div>
+								<div class="content">
+									<h6 style="color: #2905A1; font-family: 'Arial' ; font-weight: bold; font-size: 16px; padding: 10px 10px 10px 10px" >
+										<a href="/bai-viet/<%= dataNhanVatSuKien[i].id %> "> 
+											<%= dataNhanVatSuKien[i].name.replace(/(<([^>]+)>)/igm,"").substr(0,100) %></a>
+									</h6>
+									<div class="meta-tin-chuyenmuc">	
+										<span class="date" ><i class="fa fa-calendar"></i>   
+											<%= moment(dataNhanVatSuKien[i].updatedAt).format("DD-MM-YYYY") %> | <%= dataNhanVatSuKien[i].view %> views 
+										</span>
+									</div> 
+									<!-- <h6 style="font-family: 'Arial';font-size:15px; color: #333 ; line-height:18px; margin: 10px 10px 10px 10px" >									
+										<%= dataKinhdoanhPost[i].title.replace(/(<([^>]+)>)/igm,"").substr(0,100) %>
+									</h6> -->
+								</div>
+									
+							</div>
+
+						</div>
+
+						<%  } %>
+					
+				</div>
+
+				<!------TIN VĂN HÓA DOANH NGHIỆP  ------->
+				<div class="chuyenmuc-tin" style="margin-left:-7px; margin-right: -7px"  >
+					<H6 style="color: #d40d13; font-weight:bold; font-family: 'Arial' ; ">
+						<i class="fa fa-newspaper-o" aria-hidden="true"></i>	 &nbsp;					 
+						TIN VĂN HÓA DOANH NGHIỆP - TRI ÂN KHÁCH HÀNG 
+					<H6>
+				</div>					 				 
+				<div class="row">  
+					<% for( let i = 0; i<  dataVHDNTAKH.length ; i ++ )  {%>
+						<div class="col-lg-4 col-md-6 col-sm-12">	
+							<div class="single-post">			
+								<div class="image-tin-350200">
+									<a href="/bai-viet/<%= dataVHDNTAKH[i].id %> " >
+										<img src="<%= folderUploads + dataVHDNTAKH[i].thumb %>"  style="width:100% ; height:160px ;margin-top: 10px" >											
+									</a>									
+								</div>
+								<div class="content">
+									<h6 style="color: #2905A1; font-family: 'Arial' ; font-weight: bold; font-size: 16px; padding: 10px 10px 10px 10px" >
+										<a href="/bai-viet/<%= dataVHDNTAKH[i].id %> "> 
+											<%= dataVHDNTAKH[i].name.replace(/(<([^>]+)>)/igm,"").substr(0,100) %></a>
+									</h6>
+									<div class="meta-tin-chuyenmuc">	
+										<span class="date" ><i class="fa fa-calendar"></i>   
+											<%= moment(dataVHDNTAKH[i].updatedAt).format("DD-MM-YYYY") %> | <%= dataVHDNTAKH[i].view %> views 
+										</span>
+									</div> 
+									<!-- <h6 style="font-family: 'Arial';font-size:15px; color: #333 ; line-height:18px; margin: 10px 10px 10px 10px" >									
+										<%= dataKinhdoanhPost[i].title.replace(/(<([^>]+)>)/igm,"").substr(0,100) %>
+									</h6> -->
+								</div>
+									
+							</div>
+
+						</div>
+
+						<%  } %>
+					
+				</div>	
+
+				<!------TIN ĐẢNG ĐOÀN THỂ ------->
+				<div class="chuyenmuc-tin" style="margin-left:-7px; margin-right: -7px"  >
+					<H6 style="color: #d40d13; font-weight:bold; font-family: 'Arial' ; ">
+						<i class="fa fa-newspaper-o" aria-hidden="true"></i>	 &nbsp;					 
+						TIN ĐẢNG ĐOÀN THỂ
+					<H6>
+				</div>					 				 
+				<div class="row">  
+					<% for( let i = 0; i<  dataDangdoanthe.length ; i ++ )  {%>
+						<div class="col-lg-4 col-md-6 col-sm-12">	
+							<div class="single-post">			
+								<div class="image-tin-350200">
+									<a href="/bai-viet/<%= dataDangdoanthe[i].id %> " >
+										<img src="<%= folderUploads + dataDangdoanthe[i].thumb %>"  style="width:100% ; height:160px ;margin-top: 10px" >											
+									</a>									
+								</div>
+								<div class="content">
+									<h6 style="color: #2905A1; font-family: 'Arial' ; font-weight: bold; font-size: 16px; padding: 10px 10px 10px 10px" >
+										<a href="/bai-viet/<%= dataDangdoanthe[i].id %> "> 
+											<%= dataDangdoanthe[i].name.replace(/(<([^>]+)>)/igm,"").substr(0,100) %></a>
+									</h6>
+									<div class="meta-tin-chuyenmuc">	
+										<span class="date" ><i class="fa fa-calendar"></i>   
+											<%= moment(dataDangdoanthe[i].updatedAt).format("DD-MM-YYYY") %> | <%= dataDangdoanthe[i].view %> views 
+										</span>
+									</div> 
+									<!-- <h6 style="font-family: 'Arial';font-size:15px; color: #333 ; line-height:18px; margin: 10px 10px 10px 10px" >									
+										<%= dataKinhdoanhPost[i].title.replace(/(<([^>]+)>)/igm,"").substr(0,100) %>
+									</h6> -->
+								</div>
+									
+							</div>
+
+						</div>
+
+						<%  } %>
+					
+				</div>	
+
+				<!------TIN CÔNG ĐOÀN ------->
+				<div class="chuyenmuc-tin" style="margin-left:-7px; margin-right: -7px"  >
+					<H6 style="color: #d40d13; font-weight:bold; font-family: 'Arial' ; ">
+						<i class="fa fa-newspaper-o" aria-hidden="true"></i>	 &nbsp;					 
+						TIN CÔNG ĐOÀN
+					<H6>
+				</div>					 				 
+				<div class="row">  
+					<% for( let i = 0; i<  dataCongdoan.length ; i ++ )  {%>
+						<div class="col-lg-4 col-md-6 col-sm-12">	
+							<div class="single-post">			
+								<div class="image-tin-350200">
+									<a href="/bai-viet/<%= dataCongdoan[i].id %> " >
+										<img src="<%= folderUploads + dataCongdoan[i].thumb %>"  style="width:100% ; height:160px ;margin-top: 10px" >											
+									</a>									
+								</div>
+								<div class="content">
+									<h6 style="color: #2905A1; font-family: 'Arial' ; font-weight: bold; font-size: 16px; padding: 10px 10px 10px 10px" >
+										<a href="/bai-viet/<%= dataCongdoan[i].id %> "> 
+											<%= dataCongdoan[i].name.replace(/(<([^>]+)>)/igm,"").substr(0,100) %></a>
+									</h6>
+									<div class="meta-tin-chuyenmuc">	
+										<span class="date" ><i class="fa fa-calendar"></i>   
+											<%= moment(dataCongdoan[i].updatedAt).format("DD-MM-YYYY") %> | <%= dataCongdoan[i].view %> views 
+										</span>
+									</div> 
+									<!-- <h6 style="font-family: 'Arial';font-size:15px; color: #333 ; line-height:18px; margin: 10px 10px 10px 10px" >									
+										<%= dataKinhdoanhPost[i].title.replace(/(<([^>]+)>)/igm,"").substr(0,100) %>
+									</h6> -->
+								</div>
+									
+							</div>
+
+						</div>
+
+						<%  } %>
+					
+				</div>	
+
+				<!------TIN ĐOÀN CƠ SỞ ------->
+				<div class="chuyenmuc-tin" style="margin-left:-7px; margin-right: -7px"  >
+					<H6 style="color: #d40d13; font-weight:bold; font-family: 'Arial' ; ">
+						<i class="fa fa-newspaper-o" aria-hidden="true"></i>	 &nbsp;					 
+						TIN ĐOÀN CỞ SỞ
+					<H6>
+				</div>					 				 
+				<div class="row">  
+					<% for( let i = 0; i<  dataDoanCoSo.length ; i ++ )  {%>
+						<div class="col-lg-4 col-md-6 col-sm-12">	
+							<div class="single-post">			
+								<div class="image-tin-350200">
+									<a href="/bai-viet/<%= dataDoanCoSo[i].id %> " >
+										<img src="<%= folderUploads + dataCongdoan[i].thumb %>"  style="width:100% ; height:160px ;margin-top: 10px" >											
+									</a>									
+								</div>
+								<div class="content">
+									<h6 style="color: #2905A1; font-family: 'Arial' ; font-weight: bold; font-size: 16px; padding: 10px 10px 10px 10px" >
+										<a href="/bai-viet/<%= dataDoanCoSo[i].id %> "> 
+											<%= dataDoanCoSo[i].name.replace(/(<([^>]+)>)/igm,"").substr(0,100) %></a>
+									</h6>
+									<div class="meta-tin-chuyenmuc">	
+										<span class="date" ><i class="fa fa-calendar"></i>   
+											<%= moment(dataDoanCoSo[i].updatedAt).format("DD-MM-YYYY") %> | <%= dataDoanCoSo[i].view %> views 
+										</span>
+									</div> 
+									<!-- <h6 style="font-family: 'Arial';font-size:15px; color: #333 ; line-height:18px; margin: 10px 10px 10px 10px" >									
+										<%= dataKinhdoanhPost[i].title.replace(/(<([^>]+)>)/igm,"").substr(0,100) %>
+									</h6> -->
+								</div>
+									
+							</div>
+
+						</div>
+
+						<%  } %>
+					
+				</div>	
+
+				<!------TRANG THƠ VĂN ------->
+				<div class="chuyenmuc-tin" style="margin-left:-7px; margin-right: -7px"  >
+					<H6 style="color: #d40d13; font-weight:bold; font-family: 'Arial' ; ">
+						<i class="fa fa-newspaper-o" aria-hidden="true"></i>	 &nbsp;					 
+						TRANG THƠ VĂN
+					<H6>
+				</div>					 				 
+				<div class="row">  
+					<% for( let i = 0; i<  dataThoVan.length ; i ++ )  {%>
+						<div class="col-lg-4 col-md-6 col-sm-12">	
+							<div class="single-post">			
+								<div class="image-tin-350200">
+									<a href="/bai-viet/<%= dataThoVan[i].id %> " >
+										<img src="<%= folderUploads + dataThoVan[i].thumb %>"  style="width:100% ; height:160px ;margin-top: 10px" >											
+									</a>									
+								</div>
+								<div class="content">
+									<h6 style="color: #2905A1; font-family: 'Arial' ; font-weight: bold; font-size: 16px; padding: 10px 10px 10px 10px" >
+										<a href="/bai-viet/<%= dataThoVan[i].id %> "> 
+											<%= dataThoVan[i].name.replace(/(<([^>]+)>)/igm,"").substr(0,100) %></a>
+									</h6>
+									<div class="meta-tin-chuyenmuc">	
+										<span class="date" ><i class="fa fa-calendar"></i>   
+											<%= moment(dataThoVan[i].updatedAt).format("DD-MM-YYYY") %> | <%= dataThoVan[i].view %> views 
+										</span>
+									</div> 
+									<!-- <h6 style="font-family: 'Arial';font-size:15px; color: #333 ; line-height:18px; margin: 10px 10px 10px 10px" >									
+										<%= dataKinhdoanhPost[i].title.replace(/(<([^>]+)>)/igm,"").substr(0,100) %>
+									</h6> -->
+								</div>
+									
+							</div>
+
+						</div>
+
+						<%  } %>
+					
+				</div>	
+
+
+
+
+
+
+			</div>  <!-- kết thúc dòng 8 -->
+
+			<div class="col-lg-4 col-12" >
+
+			<div class="main-sidebar" style="padding-top: 39px;">
+				<!-- THỜI TIẾT-->
+				<div class="single-widget side-tags" >						
+					<div>
+						<!-- <iframe src="https://thoitiet.vn/embed/rbpyhpyuvol?days=3&amp;hC=%23ffffff&amp;hB=%232f4f9c&amp;tC=%23848484&amp;bC=%232f4f9c&amp;lC=%23dddddd" id="widgeturl" width="99%" height="320" scrolling="no" frameborder="0" allowtransparency="true" style="border:none;overflow:hidden;"></iframe>
+						<div style="font-style: italic; color:blue ; font-size:15px ; text-align: right;margin-top: -10px; ">
+							<span ><a href="https://www.windy.com/" target="_blank" >Xem thêm tại đây</a></span>
+						</div>		 -->
+						<a href="https://www.windy.com/" target="_blank">
+							<img src="backend/upload/dubaothoitiet/windy.jpg"style="width: 350px; height: 142px"></>	
+						</a>
+						
+					</div>							 
+				</div>				
+			</div>							
+		
+			<!-- KINH DOANH -->
+			<div class="main-sidebar">
+				<div class="single-widget side-tags">				
+					<div class="form">
+						<div class="table-responsive">      
+							<table class="table table-bordered table-hover">                                    
+								<thead>
+									<tr style="background-color:#c6e7f3  ;color:#310cb6; text-align:center ;font-size:16px; font-weight: bold;line-height: 35px"> 
+										<!-- color:#333 ; font-size:15px; line-height: 30px; -->
+										<td colspan="4"> 
+											<span  >
+												K.hàng- T.phẩm ngày 
+												<%= moment(dataKhangTpham[0].updatedAt).format('DD-MM-YYYY') %>
+											</span>
+										</td> 
+									</tr>								  
+								</thead>
+
+								<thead>
+									<tr style="background-color:#e4f1fd ;text-align:center; color:#333 ; font-size:14px ;line-height: 30px"> 
+										<th>TT</th>
+										<th> Điện lực </th>										  
+										<th> Khách hàng </th>
+										<th> thương phẩm </th>
+									</tr>									  
+								</thead>
+								<tbody style ="line-height: 25px">       
+									<% for(let i=0 ; i < dataKhangTpham.length ; i++ ) { %>
+										<tr style="text-align:center; color:#333 ; font-size:13px" >
+											<td><%= i+1 %></td>								
+											<td><%= dataKhangTpham[i].name %></td> 
+											<td><%= dataKhangTpham[i].khang %></td>    
+											<td><%= dataKhangTpham[i].tpham %></td>    										   
+										</tr>
+									<% } %>
+									
+								</tbody>						
+							</table>
+							</div>
+					</div>
+				</div>
+			</div>		
+		<!-- PHỤ TẢI -->
+		<div class="main-sidebar">
+			<div class="single-widget side-tags">				
+				<div class="form">
+					<div class="table-responsive">      
+						<table class="table table-bordered table-hover">                                    
+							<thead>
+								<tr style="background-color:#cfd2d3  ;color:#310cb6; text-align:center ;font-size:16px; font-weight: bold;line-height: 35px"> 
+									<!-- color:#333 ; font-size:15px; line-height: 30px; -->
+									<td colspan="4"> 
+										<span  >
+											Phụ tải-Huy động nguồn ngày  
+											<%= moment(dataKhangTpham[0].updatedAt).format('DD-MM-YYYY') %>
+										</span>
+									</td> 
+								</tr>								  
+								</thead>
+
+							<thead>
+								<tr style="background-color:#e4f1fd ;text-align:center; color:#333 ; font-size:14px ;line-height: 25px"> 
+									<th>TT</th>
+									<th> Điện lực </th>										  
+									<th> Khách hàng </th>
+									<th> thương phẩm </th>
+								</tr>									  
+							</thead>
+							<tbody style ="line-height: 25px">         
+								<% for(let i=0 ; i < dataKhangTpham.length ; i++ ) { %>
+									<tr style="text-align:center; color:#333 ; font-size:13px" >
+										<td><%= i+1 %></td>								
+										<td><%= dataKhangTpham[i].name %></td> 
+										<td><%= dataKhangTpham[i].khang %></td>    
+										<td><%= dataKhangTpham[i].tpham %></td>    										   
+									</tr>
+								<% } %>
+								
+							</tbody>						
+						</table>
+						</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<!-- CHUYE MUC KHÁC  -->
+			<div class="main-sidebar">
+				<div class="single-widget side-tags">	
+					<div class="list-group" id="list-tab" role="tablist">
+						<a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"> <i class="fa fa-list  service-icon"></i> &nbsp CHUYÊN MỤC KHÁC</a>							
+						<a class="list-group-item list-group-item-action"  data-toggle="list" href="#"><i class="fa fa-users  service-icon"></i> &nbsp&nbsp THƯ VIỆN SÁNG KIẾN</a>
+						<a class="list-group-item list-group-item-action"  data-toggle="list" href="#"><i class="fa fa-bar-chart  service-icon"></i>&nbsp&nbsp THƯ VIỆN ẢNH - VIDEO</a>							
+					</div> 
+				</div>	
+			</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+  

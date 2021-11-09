@@ -8,14 +8,14 @@ const schema = new mongoose.Schema({
     title   :   {type: String ,  trim :true },    
     content :   {type: String ,  trim :true ,  required:[true,'Post must have content'] },
     thumb   :   String,
-    status  :   { type: String , default: 'active'},    
-    position: String,    
-    view    :   {type: Number , default :1},
+    status  :   {type: String , default: 'active'},        
+    view    :   {type: Number , default : 1},
     category:   {type: String ,  trim :true },
-    author  : {
-            type: mongoose.Schema.Types.ObjectId ,
-            ref : 'user'
-    } 
+    author  :   {type: String ,  trim :true }
+    // author  : {
+    //         type: mongoose.Schema.Types.ObjectId ,
+    //         ref : 'user'
+    // } 
 },{ timestamps: true} 
 );    
 

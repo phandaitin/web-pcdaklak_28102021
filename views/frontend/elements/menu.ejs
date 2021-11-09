@@ -1,0 +1,102 @@
+
+<div class="header-inner">
+    <div class="container">
+        <div class="inner">
+            <div class="row">
+                <div class="col-lg-1 col-md-3 col-12">
+                    <div class="logo">
+                        <a href="/"></a>                        
+                    </div>
+
+                </div>
+                <div class="mobile-nav"></div>
+                <div class="col-lg-11 col-md-9 col-12">
+                <!-- Main Menu -->
+                <div class="main-menu">
+                    <nav class="navigation">
+                        <ul class="nav menu">
+                            <!-- <i class="icofont-home"  style="font-size: 35px; color: blue;"></i>                              -->
+                            <li><a href="/"></i> TRANG CHỦ </i> </a></li>
+                            <li><a href="/gioi-thieu"></i>GIỚI THIỆU </a></li>                            
+                            <li> <a href="">TIN TỨC-SỰ KIỆN<i class="icofont-rounded-down"></i></a>
+                                <ul class="dropdown">                                        
+                                    <li><a href="/tin-tuc-tong-hop" >Tin tổng hợp</a></li>
+                                    <% for(let i =0 ; i< dataCategory.length ; i++) { %>                                      
+                                        <li><a href="<%= dataCategory[i].slug %>" ><%= dataCategory[i].name.toLowerCase() %></a></li>
+                                    <% } %>
+                                </ul>
+                            </li>   
+                            
+                            <li> <a href="/">ĐIỀU HÀNH CÔNG TÁC<i class="icofont-rounded-down"></i></a>
+                                <ul class="dropdown">                                        
+                                    <li>
+                                        <a href="/cong-tac-lanh-dao" target="blank">
+                                            Lịch công tác lãnh đạo
+                                        </a>
+                                    </li>
+                                    <li><a href="/moi-hop" target="blank">
+                                        Thông báo mời họp
+                                        </a>
+                                    </li>   
+                                    <li><a href="/bao-cao-van-hanh" target="blank">
+                                        Báo cáo vận hành HTĐ
+                                        </a>
+                                    </li>                                    
+                                    <li><a href="/phuong-thuc-van-hanh" target="blank">
+                                        Phương thức vận hành HTĐ
+                                        </a>
+                                    </li>                                    
+                                    <li><a href="/dieu-dong-xe" target="blank">
+                                        Điều động phương tiện
+                                        </a>
+                                    </li>                                    
+                                </ul>
+                            </li>   
+
+                            <li> <a href="/">CHUYỂN ĐỐI SỐ<i class="icofont-rounded-down"></i></a>
+                                <ul class="dropdown">                                        
+                                    <li><a href="https://chuyendoisodoanhnghiep.info" target="blank">
+                                        CDS trong doang nghiệp
+                                        </a>
+                                    </li>                                    
+                                </ul>
+                            </li>   
+
+                        
+                            
+                            <li><a href="#">ĐIỆN MẶT TRỜI <i class="icofont-rounded-down"></i></a>
+                                <ul class="dropdown"> 
+                                    <li><a href="https://cskh.cpc.vn/frm_NLTT.aspx" target="blank">
+                                        Điện mặt trời trên mái nhà
+                                        </a>
+                                    </li>   
+                                    <li><a href="https://cskh.cpc.vn/frm_NLTT_VBPL" target="blank">
+                                        Văn bản pháp lý
+                                        </a>
+                                    </li>  
+                                </ul> 
+                            </li>
+                            <li><a href="https://portalnew.cpc.vn/"  target="blank">PORTAL-NEW-CPC</a>
+                                <ul class="dropdown"> 
+                                    <li><a href="https://portalnew.cpc.vn/portal/page/portal/EVNCPC/KinhDoanh" target="blank">
+                                        Số liệu kinh doanh
+                                        </a>
+                                    </li>   
+                                    <li><a href="https://portalnew.cpc.vn/portal/page/portal/EVNCPC/VBPQ" target="blank">
+                                        Hệ thống văn bản tài liệu
+                                        </a>
+                                    </li>  
+                                </ul> 
+                            </li>
+                            
+                            
+                            
+                        </ul>
+                    </nav>
+                </div>
+                <!--/ End Main Menu -->
+                </div>
+            </div>         
+        </div>
+    </div>
+</div>

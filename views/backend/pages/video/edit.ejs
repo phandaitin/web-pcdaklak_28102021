@@ -1,0 +1,44 @@
+ 
+ <% 
+  const collection = 'video';    
+  const linkIndex  = systemConfig.prefixAdmin + '/' + `${collection}`;
+%>
+
+    <!--  -->
+    <div class="container-fluid px-4">
+        <h1 class="mt-1">Edit Videos</h1>       
+     <!--  -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>  Form Video                 
+            </div> 
+                       
+            <form role="form" method ='POST' action="<%= linkIndex %>/<%= data.id %>?_method=PUT"  > 
+              <div class="card-body">
+                <!-- msgError -->
+                <%- include('./../../elements/msgError')%>
+                <!-- msgError -->
+                 
+
+                <div class="form-group mb-3 ">
+                  <label> Video name</label>
+                  <input type="text" class="form-control" name="name" value="<%= data.name %>">                    
+                </div> 
+
+                <div class="form-group mb-3 ">
+                  <label> Video Id</label>
+                  <input type="text" class="form-control" name="idVideo"  value="<%= data.idVideo %>">                       
+                </div> 
+ 
+
+                <div>
+                  <a href="<%= linkIndex %>" class="btn btn-danger">Cancel</a> &nbsp
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+              </div>
+            </form>    
+        </div> 
+ 
+    </div>
+ 

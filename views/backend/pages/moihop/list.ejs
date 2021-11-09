@@ -1,0 +1,63 @@
+<!-- <%= JSON.stringify(data) %>  -->
+<% 
+    const collection = 'moihop';    
+    const linkIndex  = systemConfig.prefixAdmin + '/' + `${collection}`;
+%>
+ 
+  
+    <!--  -->
+    <div class="container-fluid px-4">
+        <h1 class="mt-1">Thông báo mời họp</h1>       
+     <!--  -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i> Thông báo mời họp              
+            </div>
+            <div >              
+              <a href="<%= linkIndex %>/add" type="button" class="btn btn-primary" style="float:right; margin-right: 16px;margin-top: -40px;" >Add New</a>
+            </div>
+            <!-- <form role="form" method ='POST' action="<%= linkIndex %>/status/<%= data.id %>?_method=PUT"  >  -->
+                <div class="card-body">
+                    <table id="datatablesSimple"  >
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Báo cáo</th>                                
+                                <th>File Upload</th>
+                                
+                                <th style="text-align: center" >Action</th>
+                            </tr>
+                        </thead>
+                    
+                        <tbody>                
+                            <% for(let i = 0 ; i < data.length; i ++) { %>        
+                                <tr>                                
+                                    <td> <%= i + 1 %>  </td>
+                                    <td> <%= data[i].name %> </td>
+                                    <td> <%= data[i].thumb %> </td>
+  
+                                    <td>
+                                      <div  style=" font-size:15px; text-align: center">                                                                              
+                                        <form action="<%= linkIndex %>/<%= data[i].id %>?_method=DELETE" method="post">
+                                          <!-- <a href="<%= linkIndex %>/edit/<%= data[i].id %>" class ="btn btn-primary btn-sm" >   Edit      </a> -->
+                                          <button type="submit" class ="btn btn-danger btn-sm"
+                                              onclick="return confirm('Are you sure you want to delete this item?') "
+                                          > Delete</button>
+                                        </form>                                    
+                                      </div>
+                                    </td>                          
+
+                                </tr>
+                            <% } %>                            
+                        </tbody>
+                    </table>
+                </div>        
+                <!-- confirm delete  -->
+
+
+                  
+                <!-- confir delete  -->
+                
+        </div>  
+    </div>
+  

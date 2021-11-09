@@ -1,0 +1,45 @@
+ 
+ <% 
+  const collection = 'khangtpham';    
+  const linkIndex  = systemConfig.prefixAdmin + '/' + `${collection}`;
+%>
+    <div class="container-fluid px-4">
+        <h1 class="mt-1">Add Khách hàng - Thương phẩm</h1>     
+                  
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>  Form Khách hàng - Thương phẩm               
+            </div> 
+            
+            <form role="form" action="<%= linkIndex %>/save"  method ='POST'>
+              <div class="card-body">
+                <!-- msgError -->
+                <%- include('./../../elements/msgError')%>
+                <!-- msgError -->
+                
+                <div class="form-group mb-3 ">
+                  <label> Điện lực</label>
+                  <input type="text" class="form-control" name="name" value="">                    
+                </div> 
+
+                <div class="form-group mb-3 ">
+                  <label> Khách hàng</label>
+                  <input type="text" class="form-control" name="khang" value="">                    
+                </div> 
+
+                <div class="form-group mb-3 ">
+                  <label> Thương phẩm</label>
+                  <input type="text" class="form-control" name="tpham" value="">                    
+                </div>
+                  
+                <div>
+                  <a href="<%= linkIndex %>" class="btn btn-danger">Cancel</a> &nbsp
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+              </div>
+            </form>    
+        </div> 
+ 
+    </div>
+ 

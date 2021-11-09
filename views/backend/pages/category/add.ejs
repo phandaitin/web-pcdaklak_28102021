@@ -1,0 +1,46 @@
+ 
+ <% 
+  const collection = 'category';    
+  const linkIndex  = systemConfig.prefixAdmin + '/' + `${collection}`;
+%>
+    <div class="container-fluid px-4">
+        <h1 class="mt-1">Add Categories</h1>               
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>  Form Categories                 
+            </div> 
+            
+            <form role="form" action="<%= linkIndex %>/save"  method ='POST'>
+              <div class="card-body">
+                <!-- msgError -->
+                <%- include('./../../elements/msgError')%>
+                <!-- msgError -->
+                <div class="form-group mb-3 ">
+                  <label> Category name</label>
+                  <input type="text" class="form-control" name="name" value="">                    
+                </div> 
+                 
+
+                <div class="form-group mb-3 ">
+                  <label>Status</label>
+                  <select name="status" class="form-control" >                        
+                      <option value="active" > active</option>
+                      <option value="inactive">inactive</option>                                     
+                  </select>                                            
+                </div>
+
+                <div class="form-group mb-3 ">
+                  <label for="exampleInputPassword1">Order</label>
+                  <input type="number" class="form-control" name="order" value="1">
+                </div> 
+                <div>
+                  <a href="<%= linkIndex %>" class="btn btn-danger">Cancel</a> &nbsp
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+              </div>
+            </form>    
+        </div> 
+ 
+    </div>
+ 

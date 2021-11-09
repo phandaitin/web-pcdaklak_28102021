@@ -1,0 +1,184 @@
+<% 
+const folderUploads   ='backend/upload/images/'
+%> 
+ 
+<section class="news-single section">
+	<div class="container">		
+		<div class="row">
+
+			<div class="col-lg-8 col-12" >	
+				<div class="row">
+					<div class="col-12">
+						
+						<!--THÔNG BÁO MỜI HỌP -->
+						<div class="single-widget search">
+							<div class="form">
+								<div class="table-responsive" style="padding-top:50px">      
+									<table class="table table-bordered table-hover">                                    
+										<thead>
+											<tr style="background-color: #f0f3f5 ;color:#310cb6; text-align:center ;font-size:16px; font-weight: bold;"> 
+												<td colspan="4" style="padding: 10px 0px"  > 
+													<span >
+														LỊCH CÔNG TÁC LÃNH ĐẠO
+													</span>
+												</td> 
+											</tr>								  
+											</thead>
+
+										<thead style="line-height: 30px" > 
+											<tr style="text-align:center; color:#462fc8 ; font-size:15px"> 
+												<th style="width:5%" >TT</th>
+												<th style="width:70% "> Nội dung </th>	
+												<th style="width:15%" > Ngày đăng </th>								
+												<th style="width:10%" > Link </th>								
+											</tr>									  
+										</thead>
+										<tbody>       
+											<% for(let i = 0 ; i < dataCongtaclanhdao.length ; i++) { %>
+											<tr style="color:#333 ; font-size:15px ;line-height: 30px" >
+												<td style="text-align:center" ><%= i+1 %></td>								
+												<td style="text-align:left;  padding-left: 5px;"><%= dataCongtaclanhdao[i].name %></td> 
+												<td style="text-align:left;  padding-left: 5px;"> 
+													<%= moment(dataCongtaclanhdao[i].updatedAt).format('DD-MM-YYYY') %>													
+												</td> 
+												<td style="text-align:center">
+													<a href="<%= folderUploads + dataCongtaclanhdao[i].thumb %>" target="_blank"> Link  
+													</a>
+												</td>
+												
+											</tr>
+											<% } %>
+											
+											
+											</tbody>
+										
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>
+ 
+
+			</div>  <!-- kết thúc dòng 8 -->
+
+			<div class="col-lg-4 col-12" >
+
+			<div class="main-sidebar" style="padding-top: 39px;">
+				<!-- THỜI TIẾT-->
+				<div class="single-widget side-tags" >						
+					<div>
+						<!-- <iframe src="https://thoitiet.vn/embed/rbpyhpyuvol?days=3&amp;hC=%23ffffff&amp;hB=%232f4f9c&amp;tC=%23848484&amp;bC=%232f4f9c&amp;lC=%23dddddd" id="widgeturl" width="99%" height="320" scrolling="no" frameborder="0" allowtransparency="true" style="border:none;overflow:hidden;"></iframe>
+						<div style="font-style: italic; color:blue ; font-size:15px ; text-align: right;margin-top: -10px; ">
+							<span ><a href="https://www.windy.com/" target="_blank" >Xem thêm tại đây</a></span>
+						</div>		 -->
+						<a href="https://www.windy.com/" target="_blank">
+							<img src="backend/upload/dubaothoitiet/windy.jpg"style="width: 350px; height: 142px"></>	
+						</a>
+						
+					</div>							 
+				</div>				
+			</div>							
+		
+			<!-- KINH DOANH -->
+			<div class="main-sidebar">
+				<div class="single-widget side-tags">				
+					<div class="form">
+						<div class="table-responsive">      
+							<table class="table table-bordered table-hover">                                    
+								<thead>
+									<tr style="background-color:#c6e7f3  ;color:#310cb6; text-align:center ;font-size:16px; font-weight: bold;line-height: 35px"> 
+										<!-- color:#333 ; font-size:15px; line-height: 30px; -->
+										<td colspan="4"> 
+											<span  >
+												K.hàng- T.phẩm ngày 
+												<%= moment(dataKhangTpham[0].updatedAt).format('DD-MM-YYYY') %>
+											</span>
+										</td> 
+									</tr>								  
+								</thead>
+
+								<thead>
+									<tr style="background-color:#e4f1fd ;text-align:center; color:#333 ; font-size:14px ;line-height: 30px"> 
+										<th>TT</th>
+										<th> Điện lực </th>										  
+										<th> Khách hàng </th>
+										<th> thương phẩm </th>
+									</tr>									  
+								</thead>
+								<tbody style ="line-height: 25px">       
+									<% for(let i=0 ; i < dataKhangTpham.length ; i++ ) { %>
+										<tr style="text-align:center; color:#333 ; font-size:13px" >
+											<td><%= i+1 %></td>								
+											<td><%= dataKhangTpham[i].name %></td> 
+											<td><%= dataKhangTpham[i].khang %></td>    
+											<td><%= dataKhangTpham[i].tpham %></td>    										   
+										</tr>
+									<% } %>
+									
+								</tbody>						
+							</table>
+							</div>
+					</div>
+				</div>
+			</div>		
+		<!-- PHỤ TẢI -->
+		<div class="main-sidebar">
+			<div class="single-widget side-tags">				
+				<div class="form">
+					<div class="table-responsive">      
+						<table class="table table-bordered table-hover">                                    
+							<thead>
+								<tr style="background-color:#cfd2d3  ;color:#310cb6; text-align:center ;font-size:16px; font-weight: bold;line-height: 35px"> 
+									<!-- color:#333 ; font-size:15px; line-height: 30px; -->
+									<td colspan="4"> 
+										<span  >
+											Phụ tải-Huy động nguồn ngày  
+											<%= moment(dataKhangTpham[0].updatedAt).format('DD-MM-YYYY') %>
+										</span>
+									</td> 
+								</tr>								  
+								</thead>
+
+							<thead>
+								<tr style="background-color:#e4f1fd ;text-align:center; color:#333 ; font-size:14px ;line-height: 25px"> 
+									<th>TT</th>
+									<th> Điện lực </th>										  
+									<th> Khách hàng </th>
+									<th> thương phẩm </th>
+								</tr>									  
+							</thead>
+							<tbody style ="line-height: 25px">         
+								<% for(let i=0 ; i < dataKhangTpham.length ; i++ ) { %>
+									<tr style="text-align:center; color:#333 ; font-size:13px" >
+										<td><%= i+1 %></td>								
+										<td><%= dataKhangTpham[i].name %></td> 
+										<td><%= dataKhangTpham[i].khang %></td>    
+										<td><%= dataKhangTpham[i].tpham %></td>    										   
+									</tr>
+								<% } %>
+								
+							</tbody>						
+						</table>
+						</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<!-- CHUYE MUC KHÁC  -->
+			<div class="main-sidebar">
+				<div class="single-widget side-tags">	
+					<div class="list-group" id="list-tab" role="tablist">
+						<a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"> <i class="fa fa-list  service-icon"></i> &nbsp CHUYÊN MỤC KHÁC</a>							
+						<a class="list-group-item list-group-item-action"  data-toggle="list" href="#"><i class="fa fa-users  service-icon"></i> &nbsp&nbsp THƯ VIỆN SÁNG KIẾN</a>
+						<a class="list-group-item list-group-item-action"  data-toggle="list" href="#"><i class="fa fa-bar-chart  service-icon"></i>&nbsp&nbsp THƯ VIỆN ẢNH - VIDEO</a>							
+					</div> 
+				</div>	
+			</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+  

@@ -1,0 +1,39 @@
+<form action="<%= linkIndex %>/<%= data[i].id %>/<%= data[i].status %>?_method=DELETE" method="post">
+    <% if (data[i].status =='active') { %> 
+        <a>
+            <button type="submit" class="btn btn-success btn-sm">active </button>
+        </a>
+    <% } else { %> 
+        <a>
+            <button type="submit" class="btn btn-warning btn-sm">inactive </button>
+        </a>
+    <% } %>   
+</form>         
+
+
+ 
+
+                 <!-- <div class="form-group row mb-2 "> 
+                  <label class="col-sm-2 col-form-label"> Category</label>
+                  <div class="col-sm-10">                      
+                    <select name="category" class="form-control" >          
+                      <% for(let i =0 ; i < dataMain.length; i ++)  { %>              
+                        <option > <%= dataMain[i].name %></option>
+                      <% } %>
+                    </select>  
+                  </div>
+                </div> -->
+
+
+
+                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                  <nav class="sb-sidenav-menu-nested nav">
+                      <!-- <% if( !loggedUserId ) { %> -->
+                      <a class="nav-link" href="401.html">Báo cáo vận hành</a>
+                      <!-- <% }   %> -->
+                      <!-- <% if( loggedUserId ) { %> -->
+                      <a class="nav-link" href="404.html">Phương thức vận hành</a>
+                      <a class="nav-link" href="500.html">Cập nhật phương thức vận hành</a>
+                      <!-- <% } %> -->
+                  </nav>
+              </div>

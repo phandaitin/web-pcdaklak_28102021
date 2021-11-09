@@ -6,6 +6,7 @@ const schema = new mongoose.Schema({
     email       :   {type: String ,  trim :true , unique:true,  required:[true,'Email must be required'] },
     password    :   {type: String ,  trim :true ,  required:[true,'Email must be required'], 
     minlength:[6,'Password must be at least 6 characters'] },    
+    status      :    String 
 },{ timestamps: true} 
 );    
 

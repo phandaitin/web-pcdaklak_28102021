@@ -1,0 +1,113 @@
+<% 
+const linkLogin         = systemConfig.prefixAdmin + '/login' ;
+const linkUser          = systemConfig.prefixAdmin + '/user' ;
+
+const linkCategory      = systemConfig.prefixAdmin + '/category' ;
+const linkPost          = systemConfig.prefixAdmin + '/post' ;
+const linkVideo         = systemConfig.prefixAdmin + '/video' ;
+const linkKhangTpham    = systemConfig.prefixAdmin + '/khangtpham' ;
+
+const linkDieudongxe    = systemConfig.prefixAdmin + '/dieudongxe' ;
+
+const linkBaocaoVH    = systemConfig.prefixAdmin + '/baocaovanhanh' ;
+const linkPhuongthucVH    = systemConfig.prefixAdmin + '/phuongthucvanhanh' ;
+const linkCapnhatphuongthucVH    = systemConfig.prefixAdmin + '/capnhatphuongthucvanhanh' ;
+
+const linkMoihop    = systemConfig.prefixAdmin + '/moihop' ;
+const linkCongtaclanhdao    = systemConfig.prefixAdmin + '/congtaclanhdao' ;
+const linkUngdungnoibo    = systemConfig.prefixAdmin + '/ungdung' ;
+
+%>
+
+
+
+<div id="layoutSidenav_nav">
+<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+    <div class="sb-sidenav-menu">
+        <div class="nav">            
+            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Thu gọn Menu
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+
+            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                Categories & Video
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                    <a class="nav-link" href="<%= linkCategory %>"> 1. Category</a>
+                    <a class="nav-link" href="<%= linkPost %>">     2. Post</a>
+                    <a class="nav-link"href="<%= linkVideo %>"> 3. Video</a>
+                    
+                </nav>
+            </div>
+            <!-- KINH DOANH - ĐIỀU ĐỘ -->
+            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                Kinh doanh - Văn phòng
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav">
+                    <a class="nav-link" href="<%= linkKhangTpham %>"> 1. Kinh doanh</a>
+                    <a class="nav-link" href="<%= linkMoihop %>">     2. Mời họp</a>                    
+                    <a class="nav-link" href="<%= linkCongtaclanhdao %>">   3. Lịch công tác lãnh đạo</a>                    
+                </nav>
+            </div>
+            <!-- KINH DOANH - ĐIỀU ĐỘ -->
+            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                Công tác điều hành
+                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                    <!-- <a class="nav-link" href="<%= linkDieudongxe %>" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth"> -->
+                    <a class="nav-link" href="<%= linkDieudongxe %>" >
+                       1. Lịch điều động phương tiện                        
+                    </a>
+
+                    <!-- <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link"  href="<%= linkLogin %>"> Login </a>
+                                                 
+                            
+                            <a class="nav-link" href="<%= linkUser %>">Register</a>
+                            <a class="nav-link" href="password.html">Forgot Password</a>
+                        </nav>
+                    </div> -->
+
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                        2. Điều độ - phương thức điện
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="<%= linkBaocaoVH %>">a. Báo cáo vận hành</a>
+                            <a class="nav-link" href="<%= linkPhuongthucVH %>">b. Phương thức vận hành</a>
+                            <a class="nav-link" href="<%= linkCapnhatphuongthucVH %>">c. Cập nhật phương thức vận hành</a>
+                        </nav>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="sb-sidenav-menu-heading">Addons</div>
+
+            <a class="nav-link" href="<%= linkUngdungnoibo %>">
+                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                Ứng dụng nội bộ
+            </a>
+            <a class="nav-link" href="tables.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                Tables
+            </a>
+        </div>
+    </div>
+    <div class="sb-sidenav-footer " style="text-align: center" >
+        <span  style="font-size : 18px ;"  class="small" >Wellcome: <strong style="color: yellow ;" ><%= loggedUserName %></strong></span>        
+    </div>
+</nav>
+</div>

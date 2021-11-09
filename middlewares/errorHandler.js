@@ -27,7 +27,7 @@
 
    //-------------------------------------------
     res.status(err.statusCode).json({
-       status  :   'fail',
+       status  :   'failure',
        message :   err.message 
     }) 
 

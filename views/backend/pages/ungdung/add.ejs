@@ -1,0 +1,44 @@
+ 
+ <% 
+  const collection = 'ungdung';    
+  const linkIndex  = systemConfig.prefixAdmin + '/' + `${collection}`;
+%>
+    <div class="container-fluid px-4">
+        <h1 class="mt-1">Add Ứng dụng nội bộ </h1>               
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>  Form Ứng dụng nội bộ                
+            </div> 
+            
+            <form role="form" action="<%= linkIndex %>/save"  method ='POST'>
+              <div class="card-body">
+                <!-- msgError -->
+                <%- include('./../../elements/msgError')%>
+                <!-- msgError -->
+
+                <div class="form-group mb-3 ">
+                  <label> Tên Ứng dụng nội bộ</label>
+                  <input type="text" class="form-control" name="name" value="">                    
+                </div> 
+
+                <div class="form-group mb-3 ">
+                  <label> Link ứng dụng nội bộ</label>
+                  <input type="text" class="form-control" name="link" value="">                    
+                </div> 
+
+                <div class="form-group mb-3 ">
+                  <label >Order</label>
+                  <input type="number" class="form-control" name="order" value="1">
+                </div> 
+                
+                <div>
+                  <a href="<%= linkIndex %>" class="btn btn-danger">Cancel</a> &nbsp
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+              </div>
+            </form>    
+        </div> 
+ 
+    </div>
+ 

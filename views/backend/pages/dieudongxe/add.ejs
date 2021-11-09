@@ -1,0 +1,39 @@
+ 
+ <% 
+  const collection = 'dieudongxe';    
+  const linkIndex  = systemConfig.prefixAdmin + '/' + `${collection}`;
+%>
+    <div class="container-fluid px-4">
+        <h1 class="mt-1">Thêm lịch điều động xe </h1>               
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>  Form Lịch điều động xe              
+            </div> 
+            
+            <form role="form" action="<%= linkIndex %>/save"  method ='POST'  enctype="multipart/form-data"  >
+              <div class="card-body">
+                <!-- msgError -->
+                <%- include('./../../elements/msgError')%>
+                <!-- msgError -->
+                
+                <div class="form-group mb-3 ">
+                  <label> Tên lịch điều động xe</label>
+                  <input type="text" class="form-control" name="name" value="">                    
+                </div> 
+                 
+                <div class="form-group mb-3 "> 
+                  <label> Upload file PDF</label>                  
+                    <input type="file" class="form-control" name="thumb" value ="" >                  
+                </div>
+ 
+                <div>
+                  <a href="<%= linkIndex %>" class="btn btn-danger">Cancel</a> &nbsp
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+              </div>
+            </form>    
+        </div> 
+ 
+    </div>
+ 
